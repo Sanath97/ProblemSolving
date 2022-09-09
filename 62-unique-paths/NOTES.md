@@ -1,1 +1,4 @@
-​
+**Approaches**
+1. Basic recursive solution counting total number of paths as sum: if we move one step to right from current path, if we move one step to down from current path.  Imagine this as a tree of possibilites from starting position. This results in exponential time complex solution.
+2. Better approach is to take above solution and make it dp, by introducing a memoization structure to remember values for the states(i,j) we already computed. This will avoid recomputation of overlapping subproblems.
+3. Optimal approach is to use combinatorics. For a matrix of *mXn* size, there are a total of m+n-2 steps required to reach end, because m-1 rows to move down and n-1 columns to move right before we reach end. Out of these possible steps, we can choose either m-1 rows to move down or n-1 columns to move right by doing a (m+n-2)c(m-1). This is much efficient solution for given problem, but we cannot find these unique paths(RRD, DDR etc...) with this approach. It only gives counts.
