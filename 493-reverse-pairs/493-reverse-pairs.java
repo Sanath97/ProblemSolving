@@ -17,6 +17,8 @@ class Solution {
     int merge(int[] nums, int low, int mid, int high) {
         int ans=0;
         int j=mid+1;
+        // Logic for counting number of pairs that satisfy given
+        // condition.
         for(int i=low;i<=mid;i++) {
             while(j<=high && nums[i] > (2* (long) nums[j])) {
                 j++;
